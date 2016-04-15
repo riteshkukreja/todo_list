@@ -1,0 +1,249 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(#CCC, #999);
+}
+
+.container {
+	width: 500px;
+	height: auto;
+	padding: 10px;
+
+	background-color: rgba(50, 50, 50, .78);
+	position: absolute;
+	top: 10vh;
+	left: 20vw;
+
+	border-radius: 0px 0px 5px 5px;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.container:before {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 500px;
+	height: 30px;
+
+	border-radius: 5px 5px 0px 0px;
+
+	background: rgba(0, 60, 90, .88);
+
+	content:"TODO";
+	display: block;
+	text-align: center;
+	padding: 10px 0px;
+	color: #FFF;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.task {
+	width: 90%;
+	height: 40px;
+
+	text-align: left;
+	padding: 10px 0px 10px 10px;
+	border-left: 10px solid #D32F2F;
+	background-color: #F44336;
+	margin: auto auto;
+	margin-top: 10px;
+	color: #FFF;
+
+	position: relative;
+	cursor: pointer;
+}
+
+.task.success {
+	background-color: #4CAF50;
+	border-left: 10px solid #388E3C;
+}
+
+.task.remove {
+	display: none;
+}
+
+.details {
+	width: calc(100% - 84px);
+}
+
+.details .heading {
+	color: #FFF;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.details .time {
+	font-family: trebuchet;
+	font-size: 12px;
+	margin-left: 10px;
+	color: #CCC;
+}
+
+.task .task_control {
+	word-spacing: -1px;
+   letter-spacing: -1px;
+   width: 84px;
+   height: 40px;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+.task .task_control > span {
+	width: 40px;
+	height: 40px;
+	word-spacing: normal;
+   letter-spacing: normal;
+	display: inline-block;
+}
+
+.task_control .done {
+	background-color: #303F9F;
+}
+
+.task_control .done:after {
+	content: "";
+	display: block;
+	background-image: url('../assets/done.png');
+	width: 40px;
+	height: 40px;
+	background-size: 100%;
+}
+
+.task_control .delete {
+	background-color: #D32F2F;
+}
+
+.task_control .delete:after {
+	content: "";
+	display: block;
+	background-image: url('../assets/remove.png');
+	width: 40px;
+	height: 40px;
+	background-size: 100%;
+}
+
+.floating_button {
+	position: absolute;
+	bottom: 10vh;
+	right: 10vw;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	padding: 10px;
+	background: radial-gradient(circle at 50% 50%, #D32F2F, #F44336);
+	box-shadow: 0px 2px 10px 1px #000;
+	cursor: pointer;
+}
+
+.floating_button:after {
+	content: "+";
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	top: -5px;
+	color: #FFF;
+	font-size: 32px;
+	font-weight: bolder;
+	border-radius: 50%;
+	text-align: center;
+	text-shadow: 0px 2px 1px #000;
+
+}
+
+/************************ MODAL BOX **********************/
+
+.modal {
+	width: 50%;
+	height: 40%;
+
+	position: absolute;
+	top: calc(50vh - 25%);
+	left: calc(50vw - 20%);
+
+	background: rgba(250, 250, 250, .9);
+	padding: 10px;
+	display: none;
+}
+
+.modal .heading {
+	font-family: arial;
+	font-weight: bold;
+	display: block;
+	color: #D32F2F;
+	font-size: 24px;
+}
+
+.modal .date {
+	font-size: 14px;
+	color: #999;
+}
+
+.modal .new_subtask {
+	cursor: pointer;
+	color: #069;
+	font-weight: bold;
+}
+
+.subtask {
+	padding: 2px;
+	display: block;
+	position: relative;
+}
+
+.subtask.done {
+	color: #CCC;
+}
+
+.subtask.remove {
+	display: none;
+}
+
+.subtask:before {
+	content: "-";
+	display: inline-block;
+	margin: 0 auto;
+	margin-right: 10px;
+}
+
+.subtask .done, .subtask .delete {
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+	float: right;
+	cursor: pointer;
+}
+
+.subtask .done:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url('../assets/done.png');
+	background-size: 100%;
+}
+
+.subtask .delete:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url('../assets/remove.png');
+	background-size: 100%;
+}
+
+.modal .close {
+	float: right;
+	width: 20px;
+	height: 20px;
+	background:url('../assets/close_dark.png');
+	background-size: 100%;
+	cursor: pointer;
+}
+
